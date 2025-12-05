@@ -4,6 +4,9 @@ import Pricing from "./component/pricing";
 import Contactus from "./component/contactus";
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 import { Video } from "./component/video";
+import Footer from "./component/footer";
+import AutoRotatingTestimonials from "./component/testimony";
+import Header from "./component/header";
 
 const features = [
   {
@@ -35,6 +38,7 @@ export default function Home() {
   return (
 
     <div className="container mx-auto  px-4">
+      <Header />
       <header>
         <section className="h-screen grid grid-cols-1 md:grid-cols-2 items-center gap-8">
           <div className=" flex flex-col justify-center items-start space-y-6">
@@ -86,8 +90,10 @@ export default function Home() {
         </div>
       </div>
       <Video />
+      <AutoRotatingTestimonials className="mt-24" />
       <Pricing />
       <Contactus />
+      <Footer />
     </div>
 
 
