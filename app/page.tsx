@@ -3,7 +3,7 @@ import veena from '../public/veena.png';
 import Pricing from "./component/pricing";
 import Contactus from "./component/contactus";
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
-import Introduction from "./component/hero";
+import { Video } from "./component/video";
 
 const features = [
   {
@@ -85,7 +85,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      <Video />
       <Pricing />
       <Contactus />
     </div>
