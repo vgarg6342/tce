@@ -1,3 +1,4 @@
+"use client";
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
 
 export default function Contactus() {
