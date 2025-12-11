@@ -35,11 +35,11 @@ export default function Header() {
                     <Link href="/" className="mx-2 hover:text-gray-400">
                         Home
                     </Link>
-                    <Link href="/contact" className="mx-2 hover:text-gray-400">
-                        Contact
-                    </Link>
                     <Link href="/about" className="mx-2 hover:text-gray-400">
                         About
+                    </Link>
+                    <Link href="/pricing" className="mx-2 hover:text-gray-400">
+                        Pricing
                     </Link>
                 </div>
                 <button className="sm:hidden" onClick={() => setOpen(!open)}>

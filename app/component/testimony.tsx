@@ -1,209 +1,102 @@
-// AutoRotatingTestimonials.tsx
-'use client';
+import React from 'react';
+import { Quote } from 'lucide-react';
 
-import React, { useEffect, useState, useCallback } from "react";
-
-interface Testimonial {
-    name: string;
-    role: string;
-    quote: string;
-}
-
-const testimonials: Testimonial[] = [
-    {
-        name: "Student A",
-        role: "IB HL Math",
-        quote: "The Complete Equation helped me finally understand calculus and boosted my exam confidence.",
-    },
-    {
-        name: "Student B",
-        role: "SAT Prep",
-        quote: "Clear explanations and targeted practice made a huge difference in my SAT math score.",
-    },
-    {
-        name: "Student C",
-        role: "AP Calculus",
-        quote: "The structured approach and past-paper strategy were game changers for my exam.",
-    },
-    {
-        name: "Student D",
-        role: "University Linear Algebra",
-        quote: "Concept-first teaching plus visualization made abstract topics much easier to grasp.",
-    },
-    {
-        name: "Student E",
-        role: "ACT Math",
-        quote: "Short, focused lessons fit perfectly into my busy schedule and improved my speed.",
-    },
+// 1. Sample Data (Removed date and rating properties)
+const reviews = [
+  {
+    id: 1,
+    name: "Sarah Jenkins",
+    role: "Math Student",
+    content: "This platform completely changed how I approach calculus. The step-by-step breakdown of complex problems is exactly what I needed to pass my finals.",
+    avatar: "S",
+    className: "md:col-span-2 md:row-span-2", 
+  },
+  {
+    id: 2,
+    name: "David Chen",
+    role: "Engineering Major",
+    content: "Incredible resource for circuit analysis. The visual aids for signal integrity are top-notch.",
+    avatar: "D",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 3,
+    name: "Emily R.",
+    role: "High School Senior",
+    content: "I finally understand quadratic equations! The tutoring sessions are super chill and effective.",
+    avatar: "E",
+    className: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 4,
+    name: "Michael Ross",
+    role: "Parent",
+    content: "My son's grades improved from a C to an A in just two months. Worth every penny for the personalized attention.",
+    avatar: "M",
+    className: "md:col-span-2 md:row-span-1",
+  },
+  {
+    id: 5,
+    name: "Jessica T.",
+    role: "Physics Enthusiast",
+    content: "The physics modules are just as good as the math ones. Love the deep dive into analog electronics concepts.",
+    avatar: "J",
+    className: "md:col-span-1 md:row-span-1",
+  },
 ];
 
-const AUTOPLAY_DELAY = 6000;
+const ReviewCard = ({ review, className }: { review: typeof reviews[0]; className: string }) => {
+  return (
+    <div className={`bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col hover:shadow-md transition-shadow duration-300 ${className}`}>
+      
+      {/* Header: Avatar & Name Only */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-lg shrink-0">
+          {review.avatar}
+        </div>
+        <div>
+          <h3 className="font-semibold text-slate-900 leading-tight">{review.name}</h3>
+          <p className="text-xs text-slate-500 font-medium">{review.role}</p>
+        </div>
+      </div>
 
-const AutoRotatingTestimonials: React.FC<{ initialIndex?: number; className?: string }> = ({
-    initialIndex = 0,
-    className = ""
-}) => {
-    const [current, setCurrent] = useState(initialIndex);
-    const [isClient, setIsClient] = useState(false);
-    const total = testimonials.length;
-
-    // SSR-safe client detection
-    useEffect(() => {
-        setIsClient(true);
-    }, []);
-
-    const goTo = useCallback((index: number) => {
-        setCurrent((index + total) % total);
-    }, [total]);
-
-    const next = useCallback(() => goTo(current + 1), [current, goTo]);
-    const prev = useCallback(() => goTo(current - 1), [current, goTo]);
-
-    // Auto-rotate (only on client)
-    useEffect(() => {
-        if (!isClient) return;
-
-        const id = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % total);
-        }, AUTOPLAY_DELAY);
-
-        return () => clearInterval(id);
-    }, [total, isClient]);
-
-    // Pause on hover (improved UX)
-    useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
-
-        const handleMouseEnter = () => {
-            clearTimeout(timeoutId);
-        };
-
-        const handleMouseLeave = () => {
-            timeoutId = setTimeout(() => {
-                setCurrent((prev) => (prev + 1) % total);
-            }, AUTOPLAY_DELAY / 2);
-        };
-
-        if (isClient) {
-            document.addEventListener('mouseenter', handleMouseEnter);
-            document.addEventListener('mouseleave', handleMouseLeave);
-        }
-
-        return () => {
-            clearTimeout(timeoutId);
-            if (isClient) {
-                document.removeEventListener('mouseenter', handleMouseEnter);
-                document.removeEventListener('mouseleave', handleMouseLeave);
-            }
-        };
-    }, [isClient]);
-
-    return (
-        <section className={`bg-white px-18 ${className}`}>
-            <div className="mx-auto max-w-4xl px-4 text-center">
-                <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-400">
-                    Student Feedback
-                </h2>
-                <p className="mt-2 text-3xl font-semibold md:text-4xl">
-                    Many voices, one clear result
-                </p>
-
-                <div className="relative mt-12 overflow-hidden rounded-2xl">
-                    {/* SSR-safe slider - renders first slide on server */}
-                    <div
-                        className="flex h-64 transition-transform duration-700 ease-out md:h-72"
-                        style={{
-                            transform: isClient
-                                ? `translateX(-${current * 100}%)`
-                                : 'translateX(0%)'
-                        }}
-                        role="region"
-                        aria-label="Testimonials carousel"
-                    >
-                        {testimonials.map((testimonial, index) => (
-                            <article
-                                key={`${testimonial.name}-${index}`}
-                                className="w-full flex-shrink-0 px-4"
-                                aria-hidden={!isClient || current === index}
-                                aria-label={`Testimonial ${index + 1}: ${testimonial.name}, ${testimonial.role}`}
-                            >
-                                <div className="flex h-full flex-col justify-center rounded-3xl bg-gradient-to-br from-slate-900/80 to-slate-800/60 p-8 shadow-2xl backdrop-blur-sm sm:p-12">
-                                    <blockquote className="text-lg leading-relaxed text-slate-100 md:text-xl">
-                                        "{testimonial.quote}"
-                                    </blockquote>
-
-                                    <footer className="mt-8 flex flex-col items-center gap-2 pt-4 sm:flex-row sm:justify-center sm:pt-0">
-                                        <div className="text-sm text-slate-300">
-                                            <span className="font-semibold text-white">
-                                                {testimonial.name}
-                                            </span>
-                                            <span className="mx-2 text-slate-500">•</span>
-                                            <span className="font-medium">{testimonial.role}</span>
-                                        </div>
-
-                                        <div className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                                            {index + 1} / {total}
-                                        </div>
-                                    </footer>
-                                </div>
-                            </article>
-                        ))}
-                    </div>
-
-                    {/* Navigation - hidden during SSR hydration */}
-                    {isClient && (
-                        <>
-                            <button
-                                onClick={prev}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-slate-900/90 p-3 text-slate-100 shadow-lg backdrop-blur-sm transition-all hover:bg-slate-800/90 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-950"
-                                aria-label="Previous testimonial"
-                            >
-                                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                </svg>
-                            </button>
-
-                            <button
-                                onClick={next}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-slate-900/90 p-3 text-slate-100 shadow-lg backdrop-blur-sm transition-all hover:bg-slate-800/90 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-950"
-                                aria-label="Next testimonial"
-                            >
-                                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </>
-                    )}
-                </div>
-
-                {/* Dots - SSR safe */}
-                <div className="mt-8 flex justify-center gap-2" role="tablist">
-                    {testimonials.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => goTo(index)}
-                            className={`h-2.5 w-2.5 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-transparent ${current === index
-                                ? "w-8 bg-sky-400 shadow-lg"
-                                : "bg-slate-600 hover:bg-slate-500"
-                                }`}
-                            role="tab"
-                            aria-selected={current === index}
-                            aria-label={`Go to testimonial ${index + 1}`}
-                            tabIndex={current === index ? 0 : -1}
-                        />
-                    ))}
-                </div>
-
-                {isClient && (
-                    <div className="mt-4 text-xs text-slate-500">
-                        Auto-rotating every 6 seconds • Hover to pause
-                    </div>
-                )}
-            </div>
-        </section>
-    );
+      {/* Content */}
+      <div className="relative flex-grow">
+        <Quote className="absolute -top-1 -left-1 text-indigo-50 w-8 h-8 -z-10 transform -scale-x-100" />
+        <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+          "{review.content}"
+        </p>
+      </div>
+    </div>
+  );
 };
 
-AutoRotatingTestimonials.displayName = 'AutoRotatingTestimonials';
+const BentoReviews = () => {
+  return (
+    <section className="py-16 bg-slate-50">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Student Stories
+          </h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            See what our community has to say about their learning journey.
+          </p>
+        </div>
 
-export default AutoRotatingTestimonials;
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(160px,auto)]">
+          {reviews.map((review) => (
+            <ReviewCard 
+              key={review.id} 
+              review={review} 
+              className={review.className} 
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default BentoReviews;
