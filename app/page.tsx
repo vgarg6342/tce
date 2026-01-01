@@ -1,24 +1,25 @@
 
-;
-import Contactus from "./component/contactus";
-import { Video } from "./component/video";
-import HowItWorks from "./component/howitworks";
-import BentoReviews from "./component/testimony";
-import Stats from "./component/stats";
-import Features from "./component/features";
-import Intro from "./component/intro";
 
+import Contactus from "../component/contactus";
+import { Video } from "../component/video";
+import HowItWorks from "../component/howitworks";
+import BentoReviews from "../component/testimony";
+import Stats from "../component/stats";
+import Features from "../component/features";
+import Intro from "../component/intro";
+import Subjects from "../component/subjects";
 
 import Image from "next/image";
 import student from '../public/student.jpg';
 
 export default function Home() {
   return (
-  <div>
-    <div className="container mx-auto ">
+  <div className="pt-24">
+    <div className="container block mx-auto ">
       <Intro /> 
       </div>
-      <Stats />
+      <Subjects />
+      
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-3 md:col-span-2">
       <Features/>
@@ -27,6 +28,7 @@ export default function Home() {
         <Image src={student} alt="veena" className="w-3/4 sticky top-0 mb-10" />
         </div>
       </div>
+      <Stats />
       <Video />
       <div className="align-center mx-auto">
         <HowItWorks />

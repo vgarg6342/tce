@@ -1,5 +1,5 @@
 'use client';
-import Pricing from "../component/pricing"
+import Pricing from "@/component/pricing"
 
 export default function pricing() {
     return (
