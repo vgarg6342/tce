@@ -17,7 +17,7 @@ export default function Header() {
                 "left-0",
                 "w-full",
                 "p-4",
-                'bg-gray-800',
+                'bg-white',
                 "flex-col",
                 "md:flex-row"
             ]
@@ -28,20 +28,26 @@ export default function Header() {
     }
     return (
 
-        <nav className=" sticky  top-0 w-full z-50 bg-gray-800 text-white p-4 sm:p-4 ">
+        <nav className=" sticky  top-0 w-full z-50 bg-white/70 p-4 border-b-2 backdrop-blur-xl  border-indigo-500 sm:p-4 ">
             <div className="container mx-auto flex justify-between items-center">
                 <Image src={Logo} height= {60} alt="logo" className=" object-cover align-middle" />
+                  
                 <div className={getMenuClass()}>
-                    <Link href="/" className="mx-2 hover:text-gray-400">
+                    
+                    <Link href="/" className="mx-2 text-lg text-slate-600  hover:text-gray-400">
                         Home
                     </Link>
-                    <Link href="/about" className="mx-2 hover:text-gray-400">
+                    <Link href="/about" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
                         About
                     </Link>
-                    <Link href="/pricing" className="mx-2 hover:text-gray-400">
+                    <Link href="/pricing" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
                         Pricing
                     </Link>
+                    <Link href="/blogs" className="mx-2 text-lg  text-slate-600 hover:text-gray-400">
+                        blogs
+                    </Link>
                 </div>
+                
                 <button className="sm:hidden" onClick={() => setOpen(!open)}>
                     {open ? (
                         <svg

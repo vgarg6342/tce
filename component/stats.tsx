@@ -1,12 +1,16 @@
+
+
+
+
 const stats = [
-    { id: 1, name: 'Transactions every 24 hours', value: '44 million' },
-    { id: 2, name: 'Assets under holding', value: '$119 trillion' },
-    { id: 3, name: 'New users annually', value: '46,000' },
+    { id: 1, name: 'students taught', value: '100+' },
+    { id: 2, name: 'hours of teaching experience', value: ' 3,000 ' },
+    { id: 3, name: 'students from different countries', value: '20+' },
 ]
 
 export default function Stats() {
     return (
-        <div className="bg-gray-400 py-24 sm:py-32">
+        <div className=" py-24 sm:py-32">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                     {stats.map((stat) => (

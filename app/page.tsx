@@ -14,27 +14,25 @@ import student from '../public/student.jpg';
 
 export default function Home() {
   return (
-  <div className="pt-24">
-    <div className="container block mx-auto ">
+  <div className="pt-8">
+    <div className="container block mx-auto px-10 ">
       <Intro /> 
-      </div>
-      <Subjects />
-      
-      <div className="grid grid-cols-3 gap-4">
-        <div className="col-span-3 md:col-span-2">
+    </div>
+    <Subjects />
+    <div className="grid grid-cols-3 gap-4 bg-neutral-100">
+      <div className="col-span-3 md:col-span-2">
       <Features/>
       </div>
-      <div className="hidden md:block md:col-span-1">
-        <Image src={student} alt="veena" className="w-3/4 sticky top-0 mb-10" />
+      <div className="hidden md:block md:col-span-1 ">
+        <Image src={student} alt="veena" className="w-3/4 sticky pt-16 top-0 mb-10" />
         </div>
-      </div>
+    </div>
       <Stats />
       <Video />
       <div className="align-center mx-auto">
         <HowItWorks />
       </div>
       <BentoReviews />
-      
       <div className="bg-gray-100">
       <div className=" sm:block md:grid md:grid-cols-3  md:mx-40">
         <div className="col-span-3 md:col-span-2">
@@ -47,13 +45,7 @@ export default function Home() {
         <Contactus />
         </div>
       </div>
-      </div>
-      
-      
+      </div> 
   </div>
-
-
-
-
   )
 }
