@@ -1,5 +1,5 @@
 ---
-title: "Lessons from Steve Jobs"
+title: "Lessons from Steve Jobs making title longer"
 category: "business"
 date: "10-01-2023"
 image: "/merchant.jpeg"

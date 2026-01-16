@@ -1,46 +1,50 @@
-import React from 'react';
+import Image from 'next/image';
+import avatar from '../public/people/avatar.png';
+import aajra from '../public/people/aajra.jpg';
+import saurabh from '../public/people/saurabh.jpg';
+import ugo from '../public/people/ugo.jpeg';
 import { Quote } from 'lucide-react';
 
 // 1. Sample Data (Removed date and rating properties)
 const reviews = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    role: "Math Student",
-    content: "This platform completely changed how I approach calculus. The step-by-step breakdown of complex problems is exactly what I needed to pass my finals.",
-    avatar: "S",
+    name: "Saurabh",
+    role: "Working Professional",
+    content: "I am a financial services professional from Mumbai and I wanted to skill up my advanced math for quantitative finance. Searching for the right tutor in Mathematics is very difficult and i reached out to several tutors on Preply, but found nobody who would teach advanced and customized content. I found Veena and I have studied under her. Her approach is unique, she has a consultative process of choosing the right courses to suit the learner's levels and goals and then progressively advances through the right stages to deliver her classes. She engages and works very hard to explain complex mathematical formulae, equations and problems and many a times I felt she worked harder than me. She has excellent follow through on sharing course content in advance and after the class, she ensures the student has revised and tests the knowledge level and readjusts her teaching style. I was able to learn under her and felt comfortable with her pace and engagement, this despite having to balance my work and study. Veena is really good with advanced mathematics and I really loved it the way she explained and deduced complex theorems like Taylor series etc.",
+    avatar: saurabh,
     className: "md:col-span-2 md:row-span-2", 
   },
   {
     id: 2,
-    name: "David Chen",
-    role: "Engineering Major",
-    content: "Incredible resource for circuit analysis. The visual aids for signal integrity are top-notch.",
-    avatar: "D",
+    name: "Sasha",
+    role: "Secondary Grades Student",
+    content: "Veena is an excellent and incredibly patient math tutor. She explains every detail clearly and takes me through each topic step by step, always checking that I understand. If I’m unsure about something, she immediately finds a different way to explain it, which makes learning so much easier. Her supportive and thoughtful teaching style has really helped me improve and feel more confident in math",
+    avatar: avatar,
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 3,
-    name: "Emily R.",
+    name: "Soham",
     role: "High School Senior",
-    content: "I finally understand quadratic equations! The tutoring sessions are super chill and effective.",
-    avatar: "E",
+    content: "Ms. Veena Sri N. is an exceptional Pre-Calculus teacher. Her clear explanations and structured lessons make even the toughest concepts understandable. She’s patient, approachable, and always encourages questions. Thanks to her guidance, I’ve gained confidence in math and truly enjoy learning. Her passion for teaching shines through every class.",
+    avatar: avatar,
     className: "md:col-span-1 md:row-span-1",
   },
   {
     id: 4,
-    name: "Michael Ross",
+    name: "Aajra",
     role: "Parent",
-    content: "My son's grades improved from a C to an A in just two months. Worth every penny for the personalized attention.",
-    avatar: "M",
+    content: "I will start by saying Veena is an absolutely stellar instructor. She has been helping me prepare for my Calculus final exam for college, after I had missed quite a few classes due to injuries. She explains things thoroughly, and if you don't understand on the first try, she will try a different way to explain it until you understand. She puts so much time and effort into helping me, and for the first time this semester I feel absolutely ready to take my exam. If you are looking for a tutor in any math related subject I would recommend Veena as my first choice!",
+    avatar: aajra,
     className: "md:col-span-2 md:row-span-1",
   },
   {
     id: 5,
-    name: "Jessica T.",
-    role: "Physics Enthusiast",
-    content: "The physics modules are just as good as the math ones. Love the deep dive into analog electronics concepts.",
-    avatar: "J",
+    name: "Meera",
+    role: "Maths Enthusiast",
+    content: "Veena has been an incredible tutor during my summer multivariable calculus (MVC) course. Even though the course is fast-paced and intense, she’s made the material feel manageable and clear. What I really appreciate is how she tailors her teaching to fit how I learn best focusing on what’s actually required while helping me build confidence in tricky concepts. Thanks to her, I’ve done really well in all the quizzes she’s helped me prepare for. She made a difficult subject so much easier to grasp. Highly recommend her!",
+    avatar: ugo,
     className: "md:col-span-1 md:row-span-1",
   },
 ];
@@ -52,7 +56,11 @@ const ReviewCard = ({ review, className }: { review: typeof reviews[0]; classNam
       {/* Header: Avatar & Name Only */}
       <div className="flex items-center gap-3 mb-4">
         <div className="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-lg shrink-0">
-          {review.avatar}
+          <Image
+            src={ review.avatar}
+            alt={review.name}
+            className="h-full w-full rounded-full object-cover"
+          />
         </div>
         <div>
           <h3 className="font-semibold text-slate-900 leading-tight">{review.name}</h3>

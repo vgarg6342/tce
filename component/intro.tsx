@@ -1,11 +1,11 @@
 import Image from "next/image";
-import veena from '../public/veena.png';
+import intro from '../public/intro.gif';
 import line from "../public/line.svg";
 
 export default function Intro() {
     return (
         <div>
-        <section className=" grid grid-cols-1 md:grid-cols-2 items-center ">
+        <section className=" grid grid-cols-1 md:grid-cols-2 items-center pb-10">
           <div className=" flex flex-col justify-center items-start space-y-6">
             <span className="inline-block px-3 py-1 text-sm font-semibold text-blue-800 bg-blue-100 rounded-full w-fit">
               
@@ -23,7 +23,7 @@ export default function Intro() {
             </button>
           </div>
           <div className="  flex items-center justify-center">
-            <Image src={veena} alt="veena" className="sm:w-1/1 align-center justify-center md:w-3/4" />
+            <Image src={intro} alt="struggling with math" className="sm:w-1/1 align-center justify-center md:w-3/4" />
           </div>
         </section>
       </div>

@@ -1,5 +1,5 @@
 ---
-title: "How to write clean code"
+title: "How to write clean cod making title longer e"
 category: "software engineering"
 date: "01-01-2023"
 image: "/merchant.jpeg"

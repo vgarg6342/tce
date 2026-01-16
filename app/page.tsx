@@ -8,9 +8,18 @@ import Stats from "../component/stats";
 import Features from "../component/features";
 import Intro from "../component/intro";
 import Subjects from "../component/subjects";
+import Grades from "../component/grades";
+import ServiceSection from "../component/services";
 
-import Image from "next/image";
-import student from '../public/student.jpg';
+const data = {
+  "title": "What do we do?",
+  "content": "Hi There, we are building a tutoring platform that connects students with experienced tutors for personalized learning experiences. Our mission is to make quality education accessible to everyone, everywhere. Whether you're looking for help with homework, exam preparation, or mastering a new subject, our platform offers a wide range of tutoring services tailored to your needs. Join us today and take the first step towards achieving your academic goals with the support of our dedicated tutors.",
+  "images": [
+    "/service/veena1.jpeg",
+    "/service/kanishk.png",
+    "/service/veena2.jpeg",
+  ]
+}
 
 export default function Home() {
   return (
@@ -18,20 +27,17 @@ export default function Home() {
     <div className="container block mx-auto px-10 ">
       <Intro /> 
     </div>
+    
     <Subjects />
-    <div className="grid grid-cols-3 gap-4 bg-neutral-100">
-      <div className="col-span-3 md:col-span-2">
-      <Features/>
-      </div>
-      <div className="hidden md:block md:col-span-1 ">
-        <Image src={student} alt="veena" className="w-3/4 sticky pt-16 top-0 mb-10" />
-        </div>
-    </div>
-      <Stats />
+    <ServiceSection service={data} />
+    <Features/>
+      <Grades />
       <Video />
+      
       <div className="align-center mx-auto">
         <HowItWorks />
       </div>
+      
       <BentoReviews />
       <div className="bg-gray-100">
       <div className=" sm:block md:grid md:grid-cols-3  md:mx-40">

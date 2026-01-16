@@ -1,5 +1,5 @@
 ---
-title: "The Merchant of Venice"
+title: "The Merchant of Venice The Merchant of Venice"
 category: "books"
 date: "02-04-2023"
 image: "/merchant.jpeg"
