@@ -1,8 +1,16 @@
+'use client';
 import Image from "next/image";
 import intro from '../public/intro.gif';
 import line from "../public/line.svg";
 
 export default function Intro() {
+  const scrollToPricing = () => {
+        const section = document.getElementById( 'contact' );
+        if( section ) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div>
         <section className=" grid grid-cols-1 md:grid-cols-2 items-center pb-10">
@@ -18,7 +26,7 @@ export default function Intro() {
               <li className="flex"> <Image src={line} width={50} height={20} alt="Hero Illustration" className="flex"/> Experienced tutors who make learning fun and engaging </li>
               <li className="flex"> <Image src={line} width={50} height={20} alt="Hero Illustration" className="flex"/> Flexible scheduling to fit your busy lifestyle </li>
             </ul>
-            <button className="sm:justify-item-stretch px-8 py-3 text-white font-semibold bg-purple-600 rounded-lg shadow-lg hover:bg-blue-700 transition-colors border-2 border-black">
+            <button onClick={scrollToPricing} className="sm:justify-item-stretch px-8 py-3 text-white font-semibold bg-purple-600 rounded-lg shadow-lg hover:bg-blue-700 transition-colors border-2 border-black">
               Start Learning Today
             </button>
           </div>

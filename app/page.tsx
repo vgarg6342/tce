@@ -29,7 +29,7 @@ export default function Home() {
     </div>
     
     <Subjects />
-    <ServiceSection service={data} />
+    {/* <ServiceSection service={data} /> */}
     <Features/>
       <Grades />
       <Video />
@@ -39,11 +39,11 @@ export default function Home() {
       </div>
       
       <BentoReviews />
-      <div className="bg-gray-100">
+      <div id = "contact" className="bg-gray-100">
       <div className=" sm:block md:grid md:grid-cols-3  md:mx-40">
         <div className="col-span-3 md:col-span-2">
-        <div className="text-4xl sm:text-center md:text-right md:mt-80 md:mx-20"> Hi Veena here, the only thing I hate more than spam emails are flat earth theorist. I guarentee, there will be no spam or 
-          promo emails from me, just quality tutoring content and occasional updates about my services. It is just me and my passion 
+        <div  className="text-4xl sm:text-center md:text-right md:mt-80 md:mx-20"> Hi Veena here, the only thing we hate more than spam emails are flat earth theorist. we guarentee, there will be no spam or 
+          promo emails from us, just quality tutoring content and occasional updates about our services. It is just us and our passion 
           for teaching here at The Complete Equation.
         </div>
       </div>

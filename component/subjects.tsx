@@ -35,6 +35,14 @@ const subjects:InsightRollProps[] = [
     {subject: '/act.png', altText: 'ACT' },
     {subject: '/commoncore.png', altText: 'Common Core' },
     {subject: '/CBSC.png', altText: 'CBSE' },
+    { subject: '/sat.png', altText: 'SAT' },
+    { subject: '/ap.png', altText: 'AP' },
+    { subject: '/gcse.png', altText: 'GCSE' },
+    { subject: '/ib.png', altText: 'IB' },
+    { subject: '/alevel.jpg', altText: 'A-Level' },
+    {subject: '/act.png', altText: 'ACT' },
+    {subject: '/commoncore.png', altText: 'Common Core' },
+    {subject: '/CBSC.png', altText: 'CBSE' },
 ];
 
 export default function Subjects() {

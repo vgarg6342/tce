@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Complete Equation",
-  description: "IB Private Tutor",
+  title: "1:1 Expert Maths Tutoring | The Complete Equation",
+  description: "Join The Complete Equation for personalized math tutoring that helps students excel at school. Experienced tutors, tailored lesson plans, and flexible scheduling.",
 };
 
 export default function RootLayout({

@@ -22,7 +22,7 @@ export default function Header() {
                 "md:flex-row"
             ]
         } else {
-            menuClass.push("hidden md:flex")
+            menuClass.push("hidden sm:flex")
         }
         return menuClass.join(" ");
     }
@@ -37,15 +37,15 @@ export default function Header() {
                     <Link href="/" className="mx-2 text-lg text-slate-600  hover:text-gray-400">
                         Home
                     </Link>
-                    <Link href="/about" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
+                    {/* <Link href="/about" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
                         About
-                    </Link>
+                    </Link> */}
                     <Link href="/pricing" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
                         Pricing
                     </Link>
-                    <Link href="/blogs" className="mx-2 text-lg  text-slate-600 hover:text-gray-400">
+                    {/* <Link href="/blogs" className="mx-2 text-lg  text-slate-600 hover:text-gray-400">
                         blogs
-                    </Link>
+                    </Link> */}
                 </div>
                 
                 <button className="sm:hidden" onClick={() => setOpen(!open)}>

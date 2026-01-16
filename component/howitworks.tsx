@@ -16,17 +16,17 @@ export default function HowItWorks() {
                 className="mx-auto mb-4 "
                 
                 />
-                <p className="text-body p-10">Book a free tial session, no commitment just getting to know the targets, and pure passion</p>
+                <p className="text-body p-10">Join us for an obligation-free initial meeting. We’ll discuss your academic goals to ensure we are the right fit, and demonstrate the dedication we bring to every student.</p>
             </div>
 
             <div className="flex bg-[#ddeafd] flex-col items-center border-2 border-black rounded-lg m-4 p-4">
                 <Image src={meettutor} alt="meet tutor" className="mx-auto mb-4 " />
-                <p className="text-body p-10">Meet your tutor and discuss your learning goals and challenges.</p>
+                <p className="text-body p-10">Connect with your dedicated mentor to define your academic objectives, identify areas for improvement, and ensure our teaching style aligns with your learning needs.</p>
             </div>
 
             <div className="flex bg-[#ddeafd] flex-col items-center border-2 border-black rounded-lg m-4 p-4">
                 <Image src={startlearning} alt="start learning" className="mx-auto mb-4" />
-                <p className="text-body p-10">Start learning with your personalized tutoring plan.</p>
+                <p className="text-body p-10">Begin your journey to mastery with a fully customized tutoring plan, meticulously designed to target your weaknesses and accelerate your academic growth.</p>
             </div>
 
         </div>
