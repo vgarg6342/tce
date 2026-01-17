@@ -13,7 +13,7 @@ export default function Header() {
             menuClass = [
                 "flex",
                 "absolute",
-                "top-[60px]",
+                "top-[80px]",
                 "left-0",
                 "w-full",
                 "p-4",

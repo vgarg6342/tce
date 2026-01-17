@@ -4,32 +4,73 @@ import meettutor from "../public/howitworks/meettutor.png"
 import startlearning from "../public/howitworks/startlearning.png"
 
 export default function HowItWorks() {
+    // Shared class for the cards to reduce repetition and ensure consistency
+    const cardClass = "flex flex-col bg-[#ddeafd] items-center border-2 border-black rounded-xl p-6 md:p-8 h-full transition-transform hover:-translate-y-1 duration-300";
+
     return (
-        <div>
-            <h1 className="text-6xl justify-center text-center md:py-20 font-bold">How it Works</h1>
-        <div className="  md:grid md:grid-cols-3 gap-4 justify-center sm:mx-10  md:mx-auto px-40">
-            
-            <div className="flex bg-[#ddeafd] flex-col items-center border-2 border-black rounded-lg m-4 p-4">
-                <Image 
-                src={booktrial} 
-                alt="book trial" 
-                className="mx-auto mb-4 "
+        <section className="w-full py-12 md:py-20">
+            {/* Main Container: Controls max width and horizontal centering */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                />
-                <p className="text-body p-10">Join us for an obligation-free initial meeting. We’ll discuss your academic goals to ensure we are the right fit, and demonstrate the dedication we bring to every student.</p>
-            </div>
+                {/* Header */}
+                <div className="text-center mb-12 md:mb-16">
+                    <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
+                        How it Works
+                    </h1>
+                </div>
 
-            <div className="flex bg-[#ddeafd] flex-col items-center border-2 border-black rounded-lg m-4 p-4">
-                <Image src={meettutor} alt="meet tutor" className="mx-auto mb-4 " />
-                <p className="text-body p-10">Connect with your dedicated mentor to define your academic objectives, identify areas for improvement, and ensure our teaching style aligns with your learning needs.</p>
-            </div>
+                {/* Grid Container */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                    
+                    {/* Card 1 */}
+                    <div className={cardClass}>
+                        <div className="relative w-full h-48 mb-6 flex items-center justify-center">
+                            <Image 
+                                src={booktrial} 
+                                alt="Book a trial" 
+                                className="object-contain max-h-full w-auto"
+                                // If using Next.js 13+ static imports, width/height are auto. 
+                                // If external, add width={200} height={200}
+                            />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3 text-center">1. Book a Trial</h3>
+                        <p className="text-base text-gray-700 text-center leading-relaxed">
+                            Join us for an obligation-free initial meeting. We’ll discuss your academic goals to ensure we are the right fit, and demonstrate the dedication we bring to every student.
+                        </p>
+                    </div>
 
-            <div className="flex bg-[#ddeafd] flex-col items-center border-2 border-black rounded-lg m-4 p-4">
-                <Image src={startlearning} alt="start learning" className="mx-auto mb-4" />
-                <p className="text-body p-10">Begin your journey to mastery with a fully customized tutoring plan, meticulously designed to target your weaknesses and accelerate your academic growth.</p>
-            </div>
+                    {/* Card 2 */}
+                    <div className={cardClass}>
+                        <div className="relative w-full h-48 mb-6 flex items-center justify-center">
+                            <Image 
+                                src={meettutor} 
+                                alt="Meet your tutor" 
+                                className="object-contain max-h-full w-auto" 
+                            />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3 text-center">2. Meet Your Tutor</h3>
+                        <p className="text-base text-gray-700 text-center leading-relaxed">
+                            Connect with your dedicated mentor to define your academic objectives, identify areas for improvement, and ensure our teaching style aligns with your learning needs.
+                        </p>
+                    </div>
 
-        </div>
-        </div>
+                    {/* Card 3 */}
+                    <div className={cardClass}>
+                        <div className="relative w-full h-48 mb-6 flex items-center justify-center">
+                            <Image 
+                                src={startlearning} 
+                                alt="Start learning" 
+                                className="object-contain max-h-full w-auto" 
+                            />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3 text-center">3. Start Learning</h3>
+                        <p className="text-base text-gray-700 text-center leading-relaxed">
+                            Begin your journey to mastery with a fully customized tutoring plan, meticulously designed to target your weaknesses and accelerate your academic growth.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     )
 }
