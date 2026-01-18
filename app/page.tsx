@@ -10,6 +10,7 @@ import Intro from "../component/intro";
 import Subjects from "../component/subjects";
 import Grades from "../component/grades";
 import ServiceSection from "../component/services";
+import FAQ from '../component/faq';
 
 const data = {
   "title": "What do we do?",
@@ -42,9 +43,9 @@ export default function Home() {
       <div id = "contact" className="bg-gray-100">
       <div className=" sm:block md:grid md:grid-cols-3  md:mx-40">
         <div className="col-span-3 md:col-span-2">
-        <div  className="text-4xl sm:text-center md:text-right md:mt-80 md:mx-20"> Hi Veena here, the only thing we hate more than spam emails are flat earth theorist. we guarentee, there will be no spam or 
-          promo emails from us, just quality tutoring content and occasional updates about our services. It is just us and our passion 
-          for teaching here at The Complete Equation.
+        <div  className="text-4xl sm:text-center md:text-right md:mt-80 md:mx-20"> Hi there, the only thing we hate more than spam emails is flat earth theorists. We guarantee there will be no spam or promo emails from us, just quality tutoring content and occasional updates about our services. 
+          It is just us and our passion for teaching here at The Complete Equation.
+          <p> Reach out to us on hello@thecompleteequation.com</p>
         </div>
       </div>
       <div className=" sm:block md:col-span-1">
@@ -52,6 +53,7 @@ export default function Home() {
         </div>
       </div>
       </div> 
+      <FAQ />
   </div>
   )
 }

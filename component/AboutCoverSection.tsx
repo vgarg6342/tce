@@ -3,6 +3,7 @@ import profileCharacter from '../public/veena.png'
 
 const AboutCoverSection = () => {
   return (
+    
     <section className='w-full md:h-[75vh] border-b-2 border-solid border-indigo-500 dark:border-light flex flex-col md:flex-row items-center justify-center text-dark dark:text-light'>
         <div className='w-full md:w-1/2 h-full border-r-2 border-solid border-indigo-500 dark:border-light flex justify-center'> 
             <Image src={profileCharacter} alt="CodeBucks" 

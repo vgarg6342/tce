@@ -5,6 +5,7 @@ export default function pricing() {
     return (
         <div>
            <Pricing /> 
+           <p className="text-center   "> Not in Any of the above category? contact us for custom quote</p>
                <div className="w-full max-w-4xl mx-auto p-4">
             <div className="text-center">
             <h2 className="text-3xl font-semibold mb-2">Get in Touch</h2>

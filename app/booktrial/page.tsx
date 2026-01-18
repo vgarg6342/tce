@@ -2,7 +2,7 @@ import React from 'react';
 
 const ZohoBookingEmbed = () => {
   // Replace this URL with the one you copied from Zoho
-  const ZOHO_EMBED_URL = "https://thecompleteequation.zohobookings.in/#/406614000000041052";
+  //const ZOHO_EMBED_URL = "https://thecompleteequation.zohobookings.in/#/406614000000041052";
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4">
