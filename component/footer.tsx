@@ -64,10 +64,10 @@ const Footer: React.FC = () => {
                     <span className="text-2xl font-bold tracking-tight text-white">
                         The Complete Equation
                     </span>
-                    <p className="max-w-md text-sm leading-6 text-slate-400">
+                    {/* <p className="max-w-md text-sm leading-6 text-slate-400">
                         Holistic math tutoring for high‑school and university students,
                         empowering you to master the language of the universe.
-                    </p>
+                    </p> */}
                     <div className="flex space-x-6">
                         {navigation.social.map((item) => (
                             <a

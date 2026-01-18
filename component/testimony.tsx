@@ -42,7 +42,7 @@ const reviews = [
   {
     id: 5,
     name: "Meera",
-    role: "Maths Enthusiast",
+    role: "Working Professional",
     content: "Veena has been an incredible tutor during my summer multivariable calculus (MVC) course. Even though the course is fast-paced and intense, she’s made the material feel manageable and clear. What I really appreciate is how she tailors her teaching to fit how I learn best focusing on what’s actually required while helping me build confidence in tricky concepts. Thanks to her, I’ve done really well in all the quizzes she’s helped me prepare for. She made a difficult subject so much easier to grasp. Highly recommend her!",
     avatar: ugo,
     className: "md:col-span-1 md:row-span-1",

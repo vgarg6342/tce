@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "1:1 Expert Maths Tutoring | The Complete Equation",
+  title: "1:1 Expert Math Tutoring | The Complete Equation",
   description: "Join The Complete Equation for personalized math tutoring that helps students excel at school. Experienced tutors, tailored lesson plans, and flexible scheduling.",
 };
 

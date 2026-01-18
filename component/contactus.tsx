@@ -37,10 +37,10 @@ export default function ContactUs () {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="w-full max-w-2xl p-8 space-y-6 bg-white rounded-lg shadow-md">
+    <div className="bg-gray-100 flex items-center justify-center">
+      <div className="w-full bg-white ">
         <h2 className="text-3xl font-bold text-center text-gray-800">Contact Us</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="">
           {/* Name Field */}
           <div>
             <label htmlFor="name" className="text-sm font-medium text-gray-700">

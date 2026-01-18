@@ -10,7 +10,7 @@ import Intro from "../component/intro";
 import Subjects from "../component/subjects";
 import Grades from "../component/grades";
 import ServiceSection from "../component/services";
-import FAQ from '../component/faq';
+
 
 const data = {
   "title": "What do we do?",
@@ -33,7 +33,7 @@ export default function Home() {
     {/* <ServiceSection service={data} /> */}
     <Features/>
       <Grades />
-      <Video />
+      {/* <Video /> */}
       
       <div className="align-center mx-auto">
         <HowItWorks />
@@ -41,19 +41,22 @@ export default function Home() {
       
       <BentoReviews />
       <div id = "contact" className="bg-gray-100">
-      <div className=" sm:block md:grid md:grid-cols-3  md:mx-40">
-        <div className="col-span-3 md:col-span-2">
-        <div  className="text-4xl sm:text-center md:text-right md:mt-80 md:mx-20"> Hi there, the only thing we hate more than spam emails is flat earth theorists. We guarantee there will be no spam or promo emails from us, just quality tutoring content and occasional updates about our services. 
+      <div className=" sm:block md:grid md:grid-cols-2 lg:grid-cols-3 container mx-auto justify-center gap-8">
+        <div className="col-span-3 sm:col-span-1 lg:col-span-2 ">
+        <div  className="sm:text-2xl lg:text-4xl sm:text-center md:text-right h-full flex justify-center items-center just font-bold align-center p-4">
+          <p>
+           Hi there, the only thing we hate more than spam emails is flat earth theorists. We guarantee there will be no spam or promo emails from us, just quality tutoring content and occasional updates about our services. 
           It is just us and our passion for teaching here at The Complete Equation.
-          <p> Reach out to us on hello@thecompleteequation.com</p>
+          </p>
         </div>
       </div>
-      <div className=" sm:block md:col-span-1">
-        <Contactus />
+      <div className=" sm:block md:col-span-1 mt-8">
+         <div className="bg-white rounded-lg shadow-lg p-8">
+                  <Contactus />
+          </div>
         </div>
       </div>
       </div> 
-      <FAQ />
   </div>
   )
 }

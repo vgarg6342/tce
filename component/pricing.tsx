@@ -89,15 +89,16 @@ export default function Pricing() {
                             </ul>
                         </div>
                         <a
-                            href={tier.href}
+                            href={'/contactus'}
                             aria-describedby={tier.id}
                             className="mt-8 block rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:mt-10"
                         >
-                            Contact Us   today
+                            Contact Us today
                         </a>
                     </div>
                 ))}
             </div>
+            <p className="text-center mt-20   "> Not in Any of the above category? contact us for custom quote</p>
         </div>
     )
 }

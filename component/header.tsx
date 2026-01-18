@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "../public/logo.png";
+import Logo from "../public/logo.svg";
 export default function Header() {
     const [open, setOpen] = useState(false);
 
@@ -30,22 +30,22 @@ export default function Header() {
 
         <nav className=" sticky  top-0 w-full z-50 bg-white/70 p-4 border-b-2 backdrop-blur-xl  border-indigo-500 sm:p-4 ">
             <div className="container mx-auto flex justify-between items-center">
-                <Image src={Logo} height= {60} alt="logo" className=" object-cover align-middle" />
+                <Image src={Logo} height= {70} alt="logo" className=" object-cover align-middle" />
                   
                 <div className={getMenuClass()}>
                     
                     <Link href="/" className="mx-2 text-lg text-slate-600  hover:text-gray-400">
                         Home
                     </Link>
-                    {/* <Link href="/about" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
-                        About
-                    </Link> */}
+                    <Link href="/contactus" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
+                        Contact Us
+                    </Link>
                     <Link href="/pricing" className="mx-2 text-lg text-slate-600 hover:text-gray-400">
                         Pricing
                     </Link>
-                    {/* <Link href="/blogs" className="mx-2 text-lg  text-slate-600 hover:text-gray-400">
-                        blogs
-                    </Link> */}
+                    <Link href="/FAQ" className="mx-2 text-lg  text-slate-600 hover:text-gray-400">
+                        FAQ
+                    </Link>
                 </div>
                 
                 <button className="sm:hidden" onClick={() => setOpen(!open)}>
