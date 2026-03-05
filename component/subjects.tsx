@@ -19,6 +19,8 @@ const subjects:InsightRollProps[] = [
     {subject: '/act.png', altText: 'ACT' },
     {subject: '/commoncore.png', altText: 'Common Core' },
     {subject: '/CBSC.png', altText: 'CBSE' },
+    {subject: '/amc.jpg', altText: 'AMC' },
+    {subject: '/olympiads.png', altText: 'Olympiads' },
     { subject: '/sat.png', altText: 'SAT' },
     { subject: '/ap.png', altText: 'AP' },
     { subject: '/gcse.png', altText: 'GCSE' },
@@ -27,6 +29,8 @@ const subjects:InsightRollProps[] = [
     {subject: '/act.png', altText: 'ACT' },
     {subject: '/commoncore.png', altText: 'Common Core' },
     {subject: '/CBSC.png', altText: 'CBSE' },
+    {subject: '/amc.jpg', altText: 'AMC' },
+    {subject: '/olympiads.png', altText: 'Olympiads' },
     { subject: '/sat.png', altText: 'SAT' },
     { subject: '/ap.png', altText: 'AP' },
     { subject: '/gcse.png', altText: 'GCSE' },
@@ -35,6 +39,8 @@ const subjects:InsightRollProps[] = [
     {subject: '/act.png', altText: 'ACT' },
     {subject: '/commoncore.png', altText: 'Common Core' },
     {subject: '/CBSC.png', altText: 'CBSE' },
+    {subject: '/amc.jpg', altText: 'AMC' },
+    {subject: '/olympiads.png', altText: 'Olympiads' },
     { subject: '/sat.png', altText: 'SAT' },
     { subject: '/ap.png', altText: 'AP' },
     { subject: '/gcse.png', altText: 'GCSE' },
@@ -43,6 +49,8 @@ const subjects:InsightRollProps[] = [
     {subject: '/act.png', altText: 'ACT' },
     {subject: '/commoncore.png', altText: 'Common Core' },
     {subject: '/CBSC.png', altText: 'CBSE' },
+    {subject: '/amc.jpg', altText: 'AMC' },
+    {subject: '/olympiads.png', altText: 'Olympiads' },
 ];
 
 export default function Subjects() {

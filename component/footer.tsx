@@ -53,6 +53,13 @@ const navigation = {
     ],
 };
 
+const legalLinks = [
+  { name: "Privacy Policy", href: "/privacy" },
+  { name: "Terms of Service", href: "/terms-and-conditions" },
+  { name: "Refund Policy", href: "/refund-policy" },
+  { name: "Student Conduct", href: "/documents/student.pdf" },
+];
+
 const Footer: React.FC = () => {
     return (
         <footer className="bg-slate-950 text-slate-300 w-full" aria-labelledby="footer-heading">
@@ -77,6 +84,19 @@ const Footer: React.FC = () => {
                             >
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon className="h-6 w-6" aria-hidden="true" />
+                            </a>
+                        ))}
+                    </div>
+
+                    <div className="flex space-x-6">
+                        {legalLinks.map((item) => (
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                className="text-slate-400 hover:text-white transition-colors duration-300"
+                            >
+                                <span className="sr-only">{item.name}</span>
+                                {item.name} 
                             </a>
                         ))}
                     </div>
