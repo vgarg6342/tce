@@ -135,7 +135,7 @@ const RefundPolicy = () => {
           </div>
 
           {/* Contact Box */}
-          <div className="mt-24 p-10 bg-blue-50 rounded-3xl border border-blue-100">
+          {/* <div className="mt-24 p-10 bg-blue-50 rounded-3xl border border-blue-100">
             <h3 className="text-xl font-bold text-blue-900 mb-4">Need Administrative Help?</h3>
             <p className="text-blue-800 mb-6">
               Tutors are not authorized to process refunds or modify billing. For all 
@@ -148,7 +148,7 @@ const RefundPolicy = () => {
             >
               Contact Billing Dept.
             </a>
-          </div>
+          </div> */}
         </main>
       </div>
 

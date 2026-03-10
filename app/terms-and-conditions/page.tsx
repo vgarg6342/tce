@@ -175,7 +175,7 @@ const TermsOfService = () => {
           </div>
 
           {/* Contact Footer */}
-          <div className="mt-24 pt-10 border-t border-slate-200">
+          {/* <div className="mt-24 pt-10 border-t border-slate-200">
             <h3 className="text-xl font-bold text-slate-900 mb-4">
               Questions regarding these Terms?
             </h3>
@@ -189,7 +189,7 @@ const TermsOfService = () => {
             >
               Contact Administration
             </a>
-          </div>
+          </div> */}
         </main>
       </div>
 

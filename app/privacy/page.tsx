@@ -162,7 +162,7 @@ const PrivacyPolicy = () => {
           </div>
 
           {/* Contact Section */}
-          <div className="mt-24 p-10 bg-slate-900 rounded-2xl text-white">
+          {/* <div className="mt-24 p-10 bg-slate-900 rounded-2xl text-white">
             <h3 className="text-2xl font-bold mb-4">Privacy Questions?</h3>
             <p className="text-slate-300 mb-8 leading-relaxed">
               If you have any concerns regarding how your data is handled or would 
@@ -174,7 +174,8 @@ const PrivacyPolicy = () => {
             >
               Contact Data Protection Officer
             </a>
-          </div>
+          </div> */}
+          
         </main>
       </div>
 
